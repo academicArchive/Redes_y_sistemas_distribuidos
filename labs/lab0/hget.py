@@ -83,20 +83,31 @@ def connect_to_server(server_name):
 
     >>> connect_to_server('localhost')
     Traceback (most recent call last):
-       ...
+    ...
     ConnectionRefusedError: [Errno 111] Connection refused
     """
 
-    # Buscar direccion ip
-    # COMPLETAR ABAJO DE ESTA LINEA
-    # Aqui deberian obtener la direccion ip del servidor y asignarla
-    # a ip_address
-    # DEJAR LA LINEA SIGUIENTE TAL COMO ESTA
+    """
+        Preguntar si hay que usar gethostbyname() o gethostbyname_ex()
+    """
+
+    # Obtenemos la direccion IP del servidor
+    ip_address = socket.gethostbyname(server_name)
+
     sys.stderr.write("Contactando al servidor en %s...\n" % ip_address)
-    # Crear socket
-    # COMPLETAR ABAJO DE ESTA LINEA
-    # Aqui deben conectarse al puerto correcto del servidor
-    # NO MODIFICAR POR FUERA DE ESTA FUNCION
+
+    # Creamos el socket "sock"
+    sock = socket.socket(socket.AF_INET, 
+                        socket.SOCK_STREAM,
+                        0,
+                        None) 
+    
+    # Conectamos el sock al servidor en el puerto HTTP_PORT 
+    # Como usamos AF_INET, la direccion es una tupla (ip, puerto)
+    sock.connect((ip_address, HTTP_PORT))
+
+    # Devolvemos el socket conectado
+    return sock
 
 
 def send_request(connection, url):
