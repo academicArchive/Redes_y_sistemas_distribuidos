@@ -1,5 +1,5 @@
 # Laboratorio 1: Aplicación Cliente
-### Cátedra de Redes y Sistemas Distribuidos 2024
+### Cátedra de Redes y Sistemas Distribuidos 2025
 
 
 ## Objetivos
@@ -15,12 +15,15 @@ hget es un cliente HTTP, desarrollado en Python 3, que obtiene una página desde
 
 ## Tarea
 
-Descargar/clonar el kickstarter desde el repositorio en [Git](https://git.cs.famaf.unc.edu.ar/redes/lab-kickstarters/lab0-kickstarter)
+Descargar el kickstart del laboratorio desde el aula virtual. Descomprimir con: tar -xvzf kickstart_lab1.tar.gz. 
+
+Kickstart [Git](https://git.cs.famaf.unc.edu.ar/redes/lab-kickstarters/lab0-kickstarter.git)
 ```
 $ git clone https://git.cs.famaf.unc.edu.ar/redes/lab-kickstarters/lab0-kickstarter.git
 ```
 Deberán completar el cliente para que funcione. El código de hget está esencialmente ya escrito y se lo damos con solamente una de las funciones incompletas: ```connect_to_server()```.
 
+A continuación daremos un ejemplo de la ejecución:
 ```
     $ ls
     hget.py
@@ -45,6 +48,7 @@ Luego de solicitar una página por su URL, obtenemos un archivo llamado download
 ```
 
 Nota: En el código pueden ver que las funciones tienen un docstring que describe su comportamiento. Además de funcionar como documentación, pueden ser utilizados como tests automáticos. Para ejecutar estos tests pueden hacer: 
+
 ```
     $ python3 -m doctest hget.py  
 ```
@@ -63,6 +67,6 @@ Opcionalmente, y con la posibilidad de que se otorguen puntos extras en la evalu
 
 ## Requisitos del codigo a entregar:
 - No se solicita un informe para este laboratorio, salvo para el punto estrella, cuya respuesta deberá estar dada en texto plano o Markdown. Pero el código que escriban debe contener comentarios con detalles de lo que hicieron. 
-- Las entregas serán a través del repositorio Git provisto por la Facultad para la Cátedra, con fecha límite el 30/3
+- Las entregas serán a través del repositorio Git provisto por la Facultad para la Cátedra, con fecha límite el 18/3
 - El código debe satisfacer PEP8
 - La biblioteca de sockets de Python permite saltearse algunos pasos y omitir algunos argumentos si estamos usando los valores por defecto. No usen eso (para este Lab), así se ven los valores explícitos.
