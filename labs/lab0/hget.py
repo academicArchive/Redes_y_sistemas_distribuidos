@@ -88,7 +88,7 @@ def connect_to_server(server_name):
     """
 
     """
-        Preguntar si hay que usar gethostbyname() o gethostbyname_ex()
+        Preguntar si hay que usar gethostbyname() o gethostbyname_ex() o socket.getaddrinfo()
     """
 
     # Obtenemos la direccion IP del servidor
@@ -96,6 +96,10 @@ def connect_to_server(server_name):
 
     sys.stderr.write("Contactando al servidor en %s...\n" % ip_address)
 
+
+    """
+        Preguntar que onda las cosas por defecto que se pasan a socket.socket()
+    """
     # Creamos el socket "sock"
     sock = socket.socket(socket.AF_INET, 
                         socket.SOCK_STREAM,
